@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESignSDK", "src\ESignSDK\ESignSDK.csproj", "{4F4158A9-2C5F-4006-8A50-BC0A4B9B4F41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF17F8ED-799F-46C1-8EB1-2A0C86284F10}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESignSDK.Test", "src\ESignSDK.Test\ESignSDK.Test.csproj", "{4C46268E-C2BC-4B38-AD10-415E7FF6C771}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F4158A9-2C5F-4006-8A50-BC0A4B9B4F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4158A9-2C5F-4006-8A50-BC0A4B9B4F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4158A9-2C5F-4006-8A50-BC0A4B9B4F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4158A9-2C5F-4006-8A50-BC0A4B9B4F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C46268E-C2BC-4B38-AD10-415E7FF6C771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C46268E-C2BC-4B38-AD10-415E7FF6C771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C46268E-C2BC-4B38-AD10-415E7FF6C771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C46268E-C2BC-4B38-AD10-415E7FF6C771}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4F97FBC-A713-4ED8-9EE5-60B8B2ECF665}
+	EndGlobalSection
+EndGlobal
