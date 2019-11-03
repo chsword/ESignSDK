@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using ESignSDK.Responses;
 
@@ -30,33 +31,35 @@ namespace ESignSDK
             return null;
         }
 
-        //public static async Task<ApiResult<TResponse>> PostAsync<TResponse, TRequest>(string url, 
-        //    TRequest request) where TResponse : class
-        //{
+        public static async Task<ApiResult<TResponse>> PostAsync<TResponse, TRequest>(string url,
+            TRequest request) where TResponse : class
+        {
 
-        //    using (var client = new HttpClient())
-        //    {
-        //        try
-        //        {
-        //            using (HttpContent httpContent = new StringContent(postData, Encoding.UTF8))
-        //            {
-        //                using (var response = await client.PostAsync(url, new))
-        //                {
-        //                    if (response.IsSuccessStatusCode)
-        //                    {
-        //                        var str = await response.Content.ReadAsStringAsync();
-        //                        return JsonUtils.Deserialize<TResponse>(str);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        catch
-        //        {
-        //            return null;
-        //        }
-        //    }
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var body = JsonUtils.SerializeCamel(request);
 
-        //    return null;
-        //}
+                    using (HttpContent httpContent = new StringContent(body, Encoding.UTF8))
+                    {
+                        using (var response = await client.PostAsync(url, httpContent))
+                        {
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var str = await response.Content.ReadAsStringAsync();
+                                return JsonUtils.Deserialize<TResponse>(str);
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            return null;
+        }
     }
 }

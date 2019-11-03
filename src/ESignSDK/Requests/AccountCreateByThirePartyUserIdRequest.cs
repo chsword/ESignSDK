@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace ESignSDK.Requests
 {
@@ -17,7 +17,7 @@ namespace ESignSDK.Requests
         /// <summary>
         /// 证件类型,详见个人证件类型说明 ，默认CRED_PSN_CH_IDCARD
         /// </summary>
-        public string IdType { get; set; }
+        public string IdType { get; set; } = CredPsnType.CRED_PSN_CH_IDCARD;
 
         /// <summary>
         /// 手机号码，默认空，手机号为空时无法使用短信意愿认证
