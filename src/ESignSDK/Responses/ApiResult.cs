@@ -1,22 +1,38 @@
-﻿namespace ESignSDK.Responses
+﻿using System;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Responses
 {
-    public class ApiResult<T> where T : class
+    public class ApiResult : ApiResult<object>
     {
-        public ReturnTypeCode Code { get; set; }
-        public string Message { get; set; } 
-        public T Data { get; set; }
     }
 
-    public enum ReturnTypeCode
+    public class ApiResult<T>
     {
-        成功 = 0,
+        public ReturnTypeCode Code { get; set; }
+        public T Data { get; set; }
 
-        //个人账号创建
-        账号已存在 = 53000000,
-        账号不存在 = 53000001,
-        账号类型不匹配 = 53000002,
+        [JsonIgnore] public Exception ErrorException { get; set; }
 
-        //修改
-        证件信息冲突 = 53000003
+        public string Message { get; set; }
+
+        public static ApiResult<T> Error(Exception exception)
+        {
+            return new ApiResult<T>
+            {
+                Code = ReturnTypeCode.Exception,
+                ErrorException = exception,
+                Message = exception.Message
+            };
+        }
+
+        public static ApiResult<T> Error(string message)
+        {
+            return new ApiResult<T>
+            {
+                Code = ReturnTypeCode.UnknowError,
+                Message = message
+            };
+        }
     }
 }

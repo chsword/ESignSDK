@@ -1,4 +1,3 @@
-
 using ESignSDK.Responses;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -7,9 +6,8 @@ namespace ESignSDK
 {
     internal class JsonUtils
     {
-        public static ApiResult<T> Deserialize<T>(string str) where T : class
+        public static ApiResult<T> Deserialize<T>(string str)
         {
-
             return JsonConvert.DeserializeObject<ApiResult<T>>(str);
         }
 
@@ -17,7 +15,7 @@ namespace ESignSDK
         {
             return JsonConvert.SerializeObject(obj, new JsonSerializerSettings()
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
             });
         }
     }
