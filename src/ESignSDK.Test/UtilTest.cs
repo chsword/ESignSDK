@@ -26,12 +26,10 @@ CRED_ORG_UNKNOWN 未知证件类型".Replace("\r", "");
             {
                 var arr = s.Split(" ");
                 Console.WriteLine("/// <summary>");
-                Console.WriteLine("/// "+arr[1]);
+                Console.WriteLine("/// " + arr[1]);
                 Console.WriteLine("/// </summary>");
-                Console.WriteLine("public static string " + arr[0]+ " = \"" + arr[0] + "\";");
+                Console.WriteLine("public static string " + arr[0] + " = \"" + arr[0] + "\";");
             }
-
         }
-
     }
 }

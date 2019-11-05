@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using ESignSDK.Models;
 using ESignSDK.Requests;
 using ESignSDK.Responses;
 
@@ -11,11 +12,11 @@ namespace ESignSDK
         /// http://open.esign.cn/docs/xy/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E7%AD%BE%E7%BD%B2%E6%96%B9%E4%BF%A1%E6%81%AFAPI/%E4%B8%AA%E4%BA%BA%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA.html
         /// </summary>
         /// <returns></returns>
-        public async Task<ApiResult<AccountCreateByThirdPartyUserIdResponse>> AccountCreate(
+        public async Task<ApiResult<AccountCreateResponse>> AccountCreate(
             AccountCreateRequest request)
         {
-            var result = await HttpUtils.PostAsync<
-                AccountCreateByThirdPartyUserIdResponse,
+            var result = await Http.PostAsync<
+                AccountCreateResponse,
                 AccountCreateRequest>(
                 $"{Option.BaseUrl}/v1/accounts/createByThirdPartyUserId",
                 request
@@ -28,7 +29,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> AccountDelete(string accountId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}"
             );
             return result;
@@ -39,7 +40,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> AccountDeleteByThirdId(string thirdPartyUserId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/accounts/deleteByThirdId?thirdPartyUserId={thirdPartyUserId}"
             );
             return result;
@@ -51,7 +52,7 @@ namespace ESignSDK
         public async Task<ApiResult<AccountModifyResponse>>
             AccountGet(string accountId)
         {
-            var result = await HttpUtils.GetAsync<
+            var result = await Http.GetAsync<
                 AccountModifyResponse>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}"
             );
@@ -63,7 +64,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<AccountModifyResponse>> AccountGetByThirdId(string thirdPartyUserId)
         {
-            var result = await HttpUtils.GetAsync<
+            var result = await Http.GetAsync<
                 AccountModifyResponse>(
                 $"{Option.BaseUrl}/v1/accounts/getByThirdId?thirdPartyUserId={thirdPartyUserId}"
             );
@@ -76,7 +77,7 @@ namespace ESignSDK
         /// <returns></returns>
         public async Task<ApiResult<AccountModifyResponse>> AccountModify(string accountId, ThirdPartyUser request)
         {
-            var result = await HttpUtils.PutAsync<
+            var result = await Http.PutAsync<
                 AccountModifyResponse,
                 ThirdPartyUser>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}",
@@ -92,7 +93,7 @@ namespace ESignSDK
         public async Task<ApiResult<AccountModifyResponse>>
             AccountModifyByThirdId(string thirdPartyUserId, ThirdPartyUser request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 AccountModifyResponse,
                 ThirdPartyUser>(
                 $"{Option.BaseUrl}/v1/accounts/updateByThirdId?thirdPartyUserId={thirdPartyUserId}",

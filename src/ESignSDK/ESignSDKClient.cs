@@ -10,7 +10,7 @@ namespace ESignSDK
         {
             Option = option;
             option.Validate();
-            HttpUtils = new HttpUtils(this);
+            Http = new HttpUtils(this);
         }
 
         /// <summary>
@@ -20,11 +20,11 @@ namespace ESignSDK
         internal ESignOption Option { get; set; }
 
         internal AccessTokenResponse Token { get; set; }
-        HttpUtils HttpUtils { get; set; }
+        HttpUtils Http { get; set; }
 
         public async Task<ApiResult<AccessTokenResponse>> AccessTokenAsync()
         {
-            var ret = await HttpUtils.GetAsync<AccessTokenResponse>(
+            var ret = await Http.GetAsync<AccessTokenResponse>(
                 $"{Option.BaseUrl}/v1/oauth2/access_token?appId={Option.AppId}&secret={Option.AppKey}&grantType=client_credentials",
                 false);
             if (ret.Code == 0)
@@ -43,7 +43,7 @@ namespace ESignSDK
                 return ret;
             }
 
-            var result = await HttpUtils.GetAsync<AccessTokenResponse>(
+            var result = await Http.GetAsync<AccessTokenResponse>(
                 $"{Option.BaseUrl}/v1/oauth2/refresh_token?appId={Option.AppId}&grantType=refresh_token&refreshToken={Token.RefreshToken}",
                 false
             );

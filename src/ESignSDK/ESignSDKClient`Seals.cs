@@ -12,7 +12,7 @@ namespace ESignSDK
         public async Task<ApiResult<SealCreateResponse>> AccountSealCreate(string accountId,
             AccountSealCreateRequest request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 SealCreateResponse,
                 AccountSealCreateRequest>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}/seals/personaltemplate",
@@ -26,7 +26,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> AccountSealDelete(string accountId, string sealId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}/seals/{sealId}"
             );
             return result;
@@ -38,7 +38,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<SealGetResponse>> AccountSealGet(string accountId, int offset = 0, int size = 10)
         {
-            var result = await HttpUtils.GetAsync<SealGetResponse>(
+            var result = await Http.GetAsync<SealGetResponse>(
                 $"{Option.BaseUrl}/v1/accounts/{accountId}/seals?offset={offset}&size={size}"
             );
             return result;
@@ -50,7 +50,7 @@ namespace ESignSDK
         public async Task<ApiResult<SealCreateResponse>> OrganizationSealCreate(string orgId,
             OrganizationSealCreateRequest request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 SealCreateResponse,
                 OrganizationSealCreateRequest>(
                 $"{Option.BaseUrl}/v1/organizations/{orgId}/seals/officialtemplate",
@@ -64,7 +64,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> OrganizationSealDelete(string orgId, string sealId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/organizations/{orgId}/seals/{sealId}"
             );
             return result;
@@ -75,7 +75,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<SealGetResponse>> OrganizationSealGet(string orgId, int offset = 0, int size = 10)
         {
-            var result = await HttpUtils.GetAsync<SealGetResponse>(
+            var result = await Http.GetAsync<SealGetResponse>(
                 $"{Option.BaseUrl}/v1/organizations/{orgId}/seals?offset={offset}&size={size}"
             );
             return result;

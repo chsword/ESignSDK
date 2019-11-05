@@ -1,4 +1,5 @@
 using System;
+using ESignSDK.Models;
 using ESignSDK.Requests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -6,55 +7,17 @@ using Newtonsoft.Json;
 namespace ESignSDK.Test
 {
     [TestClass]
-    public class AccountUnitTest:BaseUnitTest
+    public class AccountUnitTest : BaseUnitTest
     {
-       
         [TestMethod]
         public void AccessTokenTest()
         {
-            var token =_client.AccessTokenAsync().Result;
+            var token = _client.AccessTokenAsync().Result;
             Console.WriteLine(token.Code);
             Console.WriteLine(token.Message);
             Console.WriteLine(token.Data.Token);
             Console.WriteLine(token.Data.ExpiresIn);
             Console.WriteLine(token.Data.RefreshToken);
-        }
-        [TestMethod]
-        public void CreateUserTest()
-        {
-            var result = _client.AccountCreate(new AccountCreateRequest()
-            {
-                Email = "test@126.com",
-                IdNumber = "test",
-                Name = "test",
-                ThirdPartyUserId = "test2"
-            }).Result;
-            Console.WriteLine(JsonConvert.SerializeObject(result));
-
-        }
-        [TestMethod]
-        public void ModifyUserTest()
-        {
-
-            var result = _client.AccountModify("851ffc96444e46928dceb327ae2e0c78", new ThirdPartyUser()
-            {
-                Email = "test@126.com",
-                IdNumber = "test",
-                Name = "test1",
-            }).Result;
-            Console.WriteLine(JsonConvert.SerializeObject(result));
-        }
-        [TestMethod]
-        public void ModifyUserTest2()
-        {
-
-            var result = _client.AccountModifyByThirdId("test2", new ThirdPartyUser()
-            {
-                Email = "test@126.com",
-                IdNumber = "test",
-                Name = "test1",
-            }).Result;
-            Console.WriteLine(JsonConvert.SerializeObject(result));
         }
 
         [TestMethod]
@@ -96,6 +59,43 @@ namespace ESignSDK.Test
             Console.WriteLine(JsonConvert.SerializeObject(result));
             var ret2 = _client.AccountDeleteByThirdId("test4").Result;
             Console.WriteLine(JsonConvert.SerializeObject(ret2));
+        }
+
+        [TestMethod]
+        public void CreateUserTest()
+        {
+            var result = _client.AccountCreate(new AccountCreateRequest()
+            {
+                Email = "test@126.com",
+                IdNumber = "test",
+                Name = "test",
+                ThirdPartyUserId = "test2"
+            }).Result;
+            Console.WriteLine(JsonConvert.SerializeObject(result));
+        }
+
+        [TestMethod]
+        public void ModifyUserTest()
+        {
+            var result = _client.AccountModify("851ffc96444e46928dceb327ae2e0c78", new ThirdPartyUser()
+            {
+                Email = "test@126.com",
+                IdNumber = "test",
+                Name = "test1",
+            }).Result;
+            Console.WriteLine(JsonConvert.SerializeObject(result));
+        }
+
+        [TestMethod]
+        public void ModifyUserTest2()
+        {
+            var result = _client.AccountModifyByThirdId("test2", new ThirdPartyUser()
+            {
+                Email = "test@126.com",
+                IdNumber = "test",
+                Name = "test1",
+            }).Result;
+            Console.WriteLine(JsonConvert.SerializeObject(result));
         }
     }
 }

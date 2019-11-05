@@ -1,3 +1,5 @@
+using ESignSDK.Models;
+
 namespace ESignSDK.Requests
 {
     public class AccountCreateRequest : ThirdPartyUser

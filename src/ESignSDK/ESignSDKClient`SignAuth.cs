@@ -11,7 +11,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<bool>> SignAuthOff(string accountId)
         {
-            var result = await HttpUtils.DeleteAsync<bool>(
+            var result = await Http.DeleteAsync<bool>(
                 $"{Option.BaseUrl}/v1/signAuth/{accountId}"
             );
             return result;
@@ -22,7 +22,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<bool>> SignAuthOn(string accountId, SignAuthOnRequest request = null)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 bool,
                 SignAuthOnRequest>(
                 $"{Option.BaseUrl}/v1/signAuth/{accountId}",

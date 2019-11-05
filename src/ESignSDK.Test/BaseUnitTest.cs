@@ -7,6 +7,7 @@ namespace ESignSDK.Test
     public class BaseUnitTest
     {
         protected ESignSDKClient _client = null;
+
         [TestInitialize]
         public void Init()
         {

@@ -24,27 +24,24 @@ namespace ESignSDK
         //}
         public static byte[] Md5(byte[] bytes)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] retVal = md5.ComputeHash(bytes);
-            return retVal;
+            using (var provider = new MD5CryptoServiceProvider())
+            {
+                return provider.ComputeHash(bytes);
+            }
         }
 
         public static string Md5Base64(string str)
         {
-            return AbstractFile(Encoding.UTF8.GetBytes(str));
+            return Md5Base64(Encoding.UTF8.GetBytes(str));
         }
 
         public static string Md5Base64(byte[] bytes)
         {
-            return AbstractFile(bytes);
-        }
-
-        static string AbstractFile(byte[] bytes)
-        {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] retVal = md5.ComputeHash(bytes);
-
-            return Convert.ToBase64String(retVal);
+            using (var provider = new MD5CryptoServiceProvider())
+            {
+                byte[] retVal = provider.ComputeHash(bytes);
+                return Convert.ToBase64String(retVal);
+            }
         }
     }
 }
