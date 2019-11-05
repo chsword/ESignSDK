@@ -5,6 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>chsword</Authors>
     <Company>chsword</Company>
+    <Version>1.0.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>
