@@ -12,4 +12,4 @@ build:
   publish_nuget: true
   verbosity: minimal
 deploy: off
-tests: off
+test: off
