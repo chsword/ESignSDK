@@ -11,5 +11,4 @@ before_build:
 build:
   publish_nuget: true
   verbosity: minimal
-deploy: off
 test: off
