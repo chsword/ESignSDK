@@ -7,7 +7,7 @@ dotnet_csproj:
   version: '{version}'
   package_version: '{version}'
 before_build:
-- cmd: dotnet restore ./src
+- cmd: dotnet restore ./ESignSDK.sln
 build:
   publish_nuget: true
   verbosity: minimal
