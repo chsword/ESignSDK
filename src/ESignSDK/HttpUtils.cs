@@ -91,7 +91,6 @@ namespace ESignSDK
                 try
                 {
                     client.DefaultRequestHeaders.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
-                    // client.DefaultRequestHeaders.
                     var body = JsonUtils.SerializeCamel(request);
 
                     using (HttpContent httpContent = new StringContent(body, Encoding.UTF8, "application/json"))
