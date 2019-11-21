@@ -1,4 +1,4 @@
-﻿namespace ESignSDK.Models
+namespace ESignSDK.Models
 {
     /// <summary>
     /// 输入项组件样式
@@ -13,7 +13,7 @@
         /// <summary>
         /// 填充字体大小,默认12
         /// </summary>
-        public int FontSize { get; set; } = 12;
+        public float FontSize { get; set; } = 12;
 
         /// <summary>
         /// 输入项组件高度
