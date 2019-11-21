@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace ESignSDK.Test
 {
     [TestClass]
-    public class OrganizationTest:BaseUnitTest
+    public class OrganizationTest : BaseUnitTest
     {
         [TestMethod]
         public void OrganizationTest1()
@@ -38,9 +38,8 @@ namespace ESignSDK.Test
             WriteJson(ret4);
             var ret5 = _client.OrganizationDelete(ret4.Data.OrgId).Result;
             WriteJson(ret5);
-
-
         }
+
         [TestMethod]
         public void OrganizationTest2()
         {
@@ -71,8 +70,6 @@ namespace ESignSDK.Test
             WriteJson(ret4);
             var ret5 = _client.OrganizationDeleteByThirdId("test_org_1").Result;
             WriteJson(ret5);
-
-
         }
     }
 }

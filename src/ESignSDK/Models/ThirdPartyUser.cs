@@ -1,4 +1,4 @@
-namespace ESignSDK.Requests
+namespace ESignSDK.Models
 {
     public class ThirdPartyUser
     {

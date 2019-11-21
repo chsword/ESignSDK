@@ -1,0 +1,14 @@
+version: 1.0.0.{build}
+image: Visual Studio 2019
+configuration: Release
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+before_build:
+- cmd: dotnet restore ./ESignSDK.sln
+build:
+  publish_nuget: true
+  verbosity: minimal
+test: off

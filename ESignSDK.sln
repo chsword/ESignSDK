@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESignSDK", "src\ESignSDK\ES
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF17F8ED-799F-46C1-8EB1-2A0C86284F10}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESignSDK.Test", "src\ESignSDK.Test\ESignSDK.Test.csproj", "{4C46268E-C2BC-4B38-AD10-415E7FF6C771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESignSDK.Test", "src\ESignSDK.Test\ESignSDK.Test.csproj", "{4C46268E-C2BC-4B38-AD10-415E7FF6C771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

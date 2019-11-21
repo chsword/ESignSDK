@@ -45,7 +45,7 @@ namespace ESignSDK
             }
         }
 
-        public async Task<ApiResult<T>> GetAsync<T>(string url, bool authed = true) where T : class
+        public async Task<ApiResult<T>> GetAsync<T>(string url, bool authed = true)
         {
             using (var client = new HttpClient())
             {
@@ -74,8 +74,7 @@ namespace ESignSDK
             }
         }
 
-        public async Task<ApiResult<TResponse>> PostAsync<
-            TResponse, TRequest>(
+        public async Task<ApiResult<TResponse>> PostAsync<TResponse, TRequest>(
             string url,
             TRequest request,
             bool authed = true
@@ -197,7 +196,7 @@ namespace ESignSDK
             if (Client?.Token?.Token == null)
             {
                 var result = Client.AccessTokenAsync().Result;
-                if (result.Code != ReturnTypeCode.�ɹ�)
+                if (result.Code != ReturnTypeCode.Success)
                 {
                     throw new Exception("Access Token fail");
                 }

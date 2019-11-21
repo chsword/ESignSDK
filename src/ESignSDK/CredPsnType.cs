@@ -3,7 +3,7 @@
 namespace ESignSDK
 {
     /// <summary>
-    /// 
+    /// 个人身份证件类型
     /// </summary>
     public class CredPsnType
     {

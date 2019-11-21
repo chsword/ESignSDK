@@ -1,4 +1,4 @@
-﻿using ESignSDK.Requests;
+﻿using ESignSDK.Models;
 
 namespace ESignSDK.Responses
 {

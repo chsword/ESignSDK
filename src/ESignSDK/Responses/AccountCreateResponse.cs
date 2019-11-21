@@ -1,6 +1,6 @@
 ﻿namespace ESignSDK.Responses
 {
-    public class AccountCreateByThirdPartyUserIdResponse
+    public class AccountCreateResponse
     {
         /// <summary>
         /// 个人账号id

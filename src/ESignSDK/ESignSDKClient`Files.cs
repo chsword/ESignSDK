@@ -12,7 +12,7 @@ namespace ESignSDK
         public async Task<ApiResult<FileCreateByTemplateResponse>> FileCreateByTemplate(
             FileCreateByTemplateRequest request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 FileCreateByTemplateResponse,
                 FileCreateByTemplateRequest>(
                 $"{Option.BaseUrl}/v1/files/createByTemplate", request
@@ -25,7 +25,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<FileGetResponse>> FileGet(string fileId)
         {
-            var result = await HttpUtils.GetAsync<
+            var result = await Http.GetAsync<
                 FileGetResponse>(
                 $"{Option.BaseUrl}/v1/files/{fileId}"
             );
@@ -37,7 +37,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<FileGetUploadUrlResponse>> FileGetUploadUrl(FileGetUploadUrlRequest request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 FileGetUploadUrlResponse,
                 FileGetUploadUrlRequest>(
                 $"{Option.BaseUrl}/v1/files/getUploadUrl", request
@@ -47,7 +47,7 @@ namespace ESignSDK
 
         public async Task<ApiResult<object>> FileUpload(string uploadUrl, byte[] bytes)
         {
-            var result = await HttpUtils.PutFileAsync(uploadUrl, bytes);
+            var result = await Http.PutFileAsync(uploadUrl, bytes);
             return result;
         }
 

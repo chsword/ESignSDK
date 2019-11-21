@@ -14,7 +14,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<OrganizationCreateResponse>> OrganizationCreate(OrganizationCreateRequest request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 OrganizationCreateResponse,
                 OrganizationCreateRequest>(
                 $"{Option.BaseUrl}/v1/organizations/createByThirdPartyUserId",
@@ -29,7 +29,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> OrganizationDelete(string orgId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/organizations/{orgId}"
             );
             return result;
@@ -40,7 +40,7 @@ namespace ESignSDK
         /// </summary>
         public async Task<ApiResult<object>> OrganizationDeleteByThirdId(string thirdPartyUserId)
         {
-            var result = await HttpUtils.DeleteAsync<object>(
+            var result = await Http.DeleteAsync<object>(
                 $"{Option.BaseUrl}/v1/organizations/deleteByThirdId?thirdPartyUserId={thirdPartyUserId}"
             );
             return result;
@@ -53,7 +53,7 @@ namespace ESignSDK
         public async Task<ApiResult<OrganizationModifyResponse>>
             OrganizationGet(string accountId)
         {
-            var result = await HttpUtils.GetAsync<
+            var result = await Http.GetAsync<
                 OrganizationModifyResponse>(
                 $"{Option.BaseUrl}/v1/organizations/{accountId}"
             );
@@ -66,7 +66,7 @@ namespace ESignSDK
         public async Task<ApiResult<OrganizationModifyResponse>> OrganizationGetByThirdId(
             string thirdPartyUserId)
         {
-            var result = await HttpUtils.GetAsync<
+            var result = await Http.GetAsync<
                 OrganizationModifyResponse>(
                 $"{Option.BaseUrl}/v1/organizations/getByThirdId?thirdPartyUserId={thirdPartyUserId}"
             );
@@ -81,7 +81,7 @@ namespace ESignSDK
         public async Task<ApiResult<OrganizationModifyResponse>> OrganizationModify(
             string orgId, ThirdPartyOrganization request)
         {
-            var result = await HttpUtils.PutAsync<
+            var result = await Http.PutAsync<
                 OrganizationModifyResponse,
                 ThirdPartyOrganization>(
                 $"{Option.BaseUrl}/v1/organizations/{orgId}",
@@ -96,7 +96,7 @@ namespace ESignSDK
         public async Task<ApiResult<OrganizationModifyResponse>> OrganizationModifyByThirdId(
             string thirdPartyUserId, ThirdPartyOrganization request)
         {
-            var result = await HttpUtils.PostAsync<
+            var result = await Http.PostAsync<
                 OrganizationModifyResponse,
                 ThirdPartyOrganization>(
                 $"{Option.BaseUrl}/v1/organizations/updateByThirdId?thirdPartyUserId={thirdPartyUserId}",

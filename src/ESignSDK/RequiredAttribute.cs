@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ESignSDK.Requests
+namespace ESignSDK
 {
     public class RequiredAttribute : Attribute
     {
