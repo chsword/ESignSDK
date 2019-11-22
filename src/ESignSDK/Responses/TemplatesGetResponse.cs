@@ -3,7 +3,7 @@ using ESignSDK.Models;
 
 namespace ESignSDK.Responses
 {
-    public class TemplatesComponentGetResponse
+    public class TemplatesGetResponse
     {
         public long CreateTime { get; set; }
         public string DownloadUrl { get; set; }

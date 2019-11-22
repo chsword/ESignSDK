@@ -42,9 +42,9 @@ namespace ESignSDK
         /// 查询模板详情
         /// 简要描述：查询模板详情，包括文件模板基本信息和输入项组件信息
         /// </summary>
-        public async Task<ApiResult<TemplatesComponentGetResponse>> TemplatesComponentGet(string templateId)
+        public async Task<ApiResult<TemplatesGetResponse>> TemplatesGet(string templateId)
         {
-            var result = await Http.GetAsync<TemplatesComponentGetResponse>(
+            var result = await Http.GetAsync<TemplatesGetResponse>(
                 $"{Option.BaseUrl}/v1/docTemplates/{templateId}"
             );
             return result;
