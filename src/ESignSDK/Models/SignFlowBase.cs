@@ -25,12 +25,12 @@
         /// <summary>
         /// 文件到期前，提前多少小时回调提醒续签，小时（时间区间：1小时——15天），默认不提醒	
         /// </summary>
-        public int ContractRemind { get; set; }
+        public int? ContractRemind { get; set; }
 
         /// <summary>
         /// 文件有效截止日期,毫秒，默认不失效
         /// </summary>
-        public long ContractValidity { get; set; }
+        public long? ContractValidity { get; set; }
 
         /// <summary>
         /// 发起人账户id，即发起本次签署的操作人个人账号id；如不传，默认由对接平台发起	
@@ -45,6 +45,6 @@
         /// <summary>
         /// 签署有效截止日期,毫秒，默认不失效	
         /// </summary>
-        public long SignValidity { get; set; }
+        public long? SignValidity { get; set; }
     }
 }
