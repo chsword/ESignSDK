@@ -20,6 +20,17 @@ namespace ESignSDK
             );
             return result;
         }
+        public async Task<ApiResult<SealCreateResponse>> AccountSealImageCreate(string accountId,
+            AccountSealImageCreateRequest request)
+        {
+            var result = await Http.PostAsync<
+                SealCreateResponse,
+                AccountSealImageCreateRequest>(
+                $"{Option.BaseUrl}/v1/accounts/{accountId}/seals/image",
+                request
+            );
+            return result;
+        }
 
         /// <summary>
         /// 删除个人印章
