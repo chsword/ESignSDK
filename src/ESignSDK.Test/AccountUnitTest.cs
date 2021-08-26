@@ -10,17 +10,6 @@ namespace ESignSDK.Test
     public class AccountUnitTest : BaseUnitTest
     {
         [TestMethod]
-        public void AccessTokenTest()
-        {
-            var token = _client.AccessTokenAsync().Result;
-            Console.WriteLine(token.Code);
-            Console.WriteLine(token.Message);
-            Console.WriteLine(token.Data.Token);
-            Console.WriteLine(token.Data.ExpiresIn);
-            Console.WriteLine(token.Data.RefreshToken);
-        }
-
-        [TestMethod]
         public void AccountGetTest()
         {
             var result = _client.AccountGet("851ffc96444e46928dceb327ae2e0c78").Result;
