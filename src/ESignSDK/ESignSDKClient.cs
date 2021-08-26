@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Threading.Tasks;
 using ESignSDK.Responses;
 
 namespace ESignSDK
@@ -21,38 +20,5 @@ namespace ESignSDK
 
         internal AccessTokenResponse Token { get; set; }
         HttpUtils Http { get; set; }
-
-        public async Task<ApiResult<AccessTokenResponse>> AccessTokenAsync()
-        {
-            var ret = await Http.GetAsync<AccessTokenResponse>(
-                $"{Option.BaseUrl}/v1/oauth2/access_token?appId={Option.AppId}&secret={Option.AppKey}&grantType=client_credentials",
-                false);
-            if (ret.Code == 0)
-            {
-                Token = ret.Data;
-            }
-
-            return ret;
-        }
-
-        public async Task<ApiResult<AccessTokenResponse>> RefreshTokenAsync()
-        {
-            if (Token == null || string.IsNullOrWhiteSpace(Token.RefreshToken))
-            {
-                var ret = await AccessTokenAsync();
-                return ret;
-            }
-
-            var result = await Http.GetAsync<AccessTokenResponse>(
-                $"{Option.BaseUrl}/v1/oauth2/refresh_token?appId={Option.AppId}&grantType=refresh_token&refreshToken={Token.RefreshToken}",
-                false
-            );
-            if (result.Code == 0)
-            {
-                Token = result.Data;
-            }
-
-            return result;
-        }
     }
 }

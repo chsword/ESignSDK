@@ -35,6 +35,14 @@ namespace ESignSDK
             return Md5Base64(Encoding.UTF8.GetBytes(str));
         }
 
+        public static byte[] Md5Bytes(string str)
+        {
+            using (var provider = new MD5CryptoServiceProvider())
+            {
+                byte[] retVal = provider.ComputeHash(Encoding.UTF8.GetBytes(str));
+                return retVal;
+            }
+        }
         public static string Md5Base64(byte[] bytes)
         {
             using (var provider = new MD5CryptoServiceProvider())
