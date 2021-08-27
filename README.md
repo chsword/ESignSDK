@@ -16,7 +16,7 @@ Install-Package ESignSDK -Version 1.0.0.17
 ## 兼容性
 
 |框架|最低支持版本|备注|
-|:--:|:--:|
+|:--:|:--:|:--:|
 |.NET|5.0|
 |.NET Core|2.0|
 |.NET Framework|4.6.1|传统的.net框架，Windows Server 2016以上及Windows 10 1511以上已经自带|
