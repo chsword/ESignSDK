@@ -6,7 +6,7 @@ E签宝 非标Saas / Pass SDK
 
 ## 使用方法
 ```powershell
-Install-Package ESignSDK -Version 1.0.0.17
+Install-Package ESignSDK
 ```
 ```C#
  var client = new ESignSDKClient(new ESignOption()
