@@ -7,7 +7,7 @@
     <Company>chsword</Company>
     <Version>1.0.0.10</Version>
     <PackageProjectUrl>https://github.com/chsword/ESignSDK</PackageProjectUrl>
-    
+    <RepositoryUrl>https://github.com/chsword/ESignSDK</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
