@@ -8,6 +8,25 @@ E签宝 非标Saas / Pass SDK
 ```powershell
 Install-Package ESignSDK -Version 1.0.0.17
 ```
+```C#
+ var client = new ESignSDKClient(new ESignOption()
+            {
+                //BaseUrl = "https://smlopenapi.esign.cn",
+                BaseUrl = "https://openapi.esign.cn",
+                AppId = "your appid",
+                AppKey = "your appkey"
+            });
+  var result = await _client.AccountGet("your person accountId");
+  // or var result = _client.AccountGet("your person accountId").Result;
+  if (result.Code == ReturnTypeCode.Success)
+  {
+      Console.WriteLine(result.Data.AccountId);
+      Console.WriteLine(result.Data.CardNo);
+      Console.WriteLine(result.Data.Mobile);
+      Console.WriteLine(result.Data.Name);
+      Console.WriteLine(result.Data.IdNumber);
+  }
+```
 
 ## Release Notes
 ### v1.0.0.17 
