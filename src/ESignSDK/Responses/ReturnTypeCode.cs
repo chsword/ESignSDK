@@ -16,6 +16,12 @@
         /// 成功
         /// </summary>
         Success = 0,
+        /// <summary>
+        /// 1.token过期了
+        /// 2.header请求头不正确
+        /// 3.apiurl和应用ID环境不对应，例如apiurl是模拟环境，应用ID是正式环境的
+        /// </summary>        
+        UnAuth = 401,
 
         //个人账号创建
         /// <summary>
@@ -101,5 +107,9 @@
         /// 	签署区没有全部完成   签署区没有全部完成签署, 不能归档
         /// </summary>
         FlowSignAreaNotCompleted = 1437113,
+        /// <summary>
+        /// 流程已归档
+        /// </summary>
+        FlowAlredyArchived = 1437136,
     }
 }
