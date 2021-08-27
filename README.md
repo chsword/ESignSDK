@@ -2,7 +2,7 @@
 E签宝 非标Saas / Pass SDK
 
 [![install from nuget](http://img.shields.io/nuget/v/ESignSDK.svg?style=flat-square)](https://www.nuget.org/packages/ESignSDK)
-[![Build status](https://ci.appveyor.com/api/projects/status/ond7marcfp3flqlf/branch/master?svg=true)](https://ci.appveyor.com/project/chsword/esignsdk/branch/master)
+[![Build status](https://img.shields.io/appveyor/build/chsword/ESignSDK?label=CI&logo=.NET&style=flat-square)](https://ci.appveyor.com/project/chsword/esignsdk/branch/master)
 
 ## 使用方法
 ```powershell
