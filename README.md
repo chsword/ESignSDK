@@ -38,7 +38,7 @@ Install-Package ESignSDK
 |:--:|:--:|:--:|
 |.NET|5.0|
 |.NET Core|2.0|
-|.NET Framework|4.6.1|传统的.net框架，Windows Server 2016以上及Windows 10 1511以上已经自带|
+|.NET Framework|4.6.1|传统的.net框架<br/> Windows Server 2016以上及<br/>Windows 10 1511以上已经集成|
 |Mono|5.4|
 |Xamarin.iOS|10.14|
 |Xamarin.Max|3.8|
