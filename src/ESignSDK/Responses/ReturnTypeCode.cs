@@ -78,23 +78,20 @@
         FlowHasNoneSignArea = 1437110,
 
         /// <summary>
-        /// 	机构账户中签署份数不足，请购买套餐后再操作   当前机构签署份数不足且当前操作用户是机构管理员
+        /// 机构账户中签署份数不足，请购买套餐后再操作   当前机构签署份数不足且当前操作用户是机构管理员
         /// </summary>
         FlowOrgBalanceNotEnough = 1435404,
 
         /// <summary>
-        ///   机构账户中签署份数不足，请联系管理员（%s，%s）购买套餐后再操作   当前机构签署份数不足且当前操作用户不是机构管理员
+        /// 机构账户中签署份数不足，请联系管理员（%s，%s）购买套餐后再操作   当前机构签署份数不足且当前操作用户不是机构管理员
         /// </summary>
         FlowOrgBalanceNotEnough2 = 1435405,
-
         /// <summary>
         /// 账户中签署份数不足，请购买套餐后再操作 当前个人账户签署份数不足
         /// </summary>
         FlowAccountBalanceNotEnough = 1435403,
-
-
         /// <summary>
-        /// 	非开启状态不允许撤回流程    只能撤销状态为签署中的流程
+        /// 非开启状态不允许撤回流程    只能撤销状态为签署中的流程
         /// </summary>
         FlowCannotRevoke = 1437111,
 
@@ -111,5 +108,9 @@
         /// 流程已归档
         /// </summary>
         FlowAlredyArchived = 1437136,
+        /// <summary>
+        /// 参数错误: flowId和fileId不匹配
+        /// </summary>
+        FlowIdAndFileIdNotMatched = 1435002
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ESignSDK
+namespace ESignSDK.Responses
 {
     public class ESignOption
     {
