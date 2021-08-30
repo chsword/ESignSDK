@@ -29,6 +29,8 @@ Install-Package ESignSDK
 ```
 
 ## Release Notes
+### v1.0.0.30
+增加验签和区块链接口
 ### v1.0.0.17 
 授权方式由 OAuth2 改为 请求签名鉴权
 
