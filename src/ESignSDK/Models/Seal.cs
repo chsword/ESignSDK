@@ -1,4 +1,7 @@
-﻿namespace ESignSDK.Models
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Models
 {
     public class Seal
     {
@@ -31,5 +34,8 @@
 
         public string Url { get; set; }
         public int Width { get; set; }
+
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionData { get; set; }
     }
 }

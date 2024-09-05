@@ -29,5 +29,9 @@ namespace ESignSDK.Responses
         /// 流程开始时间	
         /// </summary>
         public string FlowStartTime { get; set; }
+
+
+
+        public int FlowStatus { get; set; }
     }
 }

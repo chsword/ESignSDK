@@ -111,6 +111,10 @@ namespace ESignSDK
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var str = GetResponseAsString(response, Encoding.UTF8);
+                    if (Client.Option.Debug)
+                    {
+                        Console.WriteLine(str);
+                    }
                     return JsonUtils.Deserialize<T>(str);
                 }
                 return ApiResult<T>.Error(response.StatusCode.ToString());

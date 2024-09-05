@@ -1,4 +1,7 @@
-﻿namespace ESignSDK.Models
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Models
 {
     public class SignFlowDocument
     {
@@ -14,5 +17,8 @@
         public string FileName { get; set; }
 
         public string FileUrl { get; set; }
+
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionData { get; set; }
     }
 }

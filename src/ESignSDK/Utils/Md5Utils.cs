@@ -24,10 +24,8 @@ namespace ESignSDK
         //}
         public static byte[] Md5(byte[] bytes)
         {
-            using (var provider = new MD5CryptoServiceProvider())
-            {
-                return provider.ComputeHash(bytes);
-            }
+            using var provider = MD5.Create();
+            return provider.ComputeHash(bytes);
         }
 
         public static string Md5Base64(string str)
@@ -37,7 +35,7 @@ namespace ESignSDK
 
         public static byte[] Md5Bytes(string str)
         {
-            using (var provider = new MD5CryptoServiceProvider())
+            using (var provider = MD5.Create())
             {
                 byte[] retVal = provider.ComputeHash(Encoding.UTF8.GetBytes(str));
                 return retVal;
@@ -45,7 +43,7 @@ namespace ESignSDK
         }
         public static string Md5Base64(byte[] bytes)
         {
-            using (var provider = new MD5CryptoServiceProvider())
+            using (var provider = MD5.Create())
             {
                 byte[] retVal = provider.ComputeHash(bytes);
                 return Convert.ToBase64String(retVal);

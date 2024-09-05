@@ -1,4 +1,7 @@
-﻿namespace ESignSDK.Models
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Models
 {
     public class SignFlowAttachmentWithSetting
     {
@@ -11,5 +14,7 @@
         /// 附件Id	
         /// </summary>
         public string FileId { get; set; }
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionData { get; set; }
     }
 }

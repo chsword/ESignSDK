@@ -12,6 +12,8 @@ namespace ESignSDK.Responses
         /// </summary>
         public string BaseUrl { get; set; }
 
+        public bool Debug { get; set; }
+
         public void Validate()
         {
             if (string.IsNullOrWhiteSpace(BaseUrl))

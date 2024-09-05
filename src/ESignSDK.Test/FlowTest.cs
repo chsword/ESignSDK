@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ESignSDK.Models;
 using ESignSDK.Requests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,15 +11,21 @@ namespace ESignSDK.Test
     [TestClass]
     public class FlowTest : BaseUnitTest
     {
-        string flowId = "ae2119f93bba405f8eeff5c7751ffb97";
+        string flowId = "e3817020187e445194a7e5c56765a2dd";
 
         string accountId = "a9c24ec246d2414fa5bfd56b8534ac02";
         private string fileId = "6703017e7d0c44a588778076af3e92c0";
         [TestMethod]
-        public void GetTest()
+        public async Task GetTest()
         {
-            var ret = _client.SignFlowGet(flowId).Result;
+            var ret = await _client.SignFlowGet(flowId);
             WriteJson(ret);
+            Console.WriteLine("-------");
+            foreach (var o in ret.Data.ExtensionData)
+            {
+                Console.WriteLine(o.Key);
+                Console.WriteLine(o.Value);
+            }
         }
         [TestMethod]
         public void AddDocument()

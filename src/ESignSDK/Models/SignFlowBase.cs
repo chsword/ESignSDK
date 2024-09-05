@@ -1,4 +1,7 @@
-﻿namespace ESignSDK.Models
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Models
 {
     public class SignFlowBase
     {
@@ -46,5 +49,9 @@
         /// 签署有效截止日期,毫秒，默认不失效	
         /// </summary>
         public long? SignValidity { get; set; }
+
+        // Extension Data
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionData { get; set; }
     }
 }

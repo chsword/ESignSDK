@@ -1,4 +1,7 @@
-﻿namespace ESignSDK.Models
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ESignSDK.Models
 {
     public class FlowConfigInfo
     {
@@ -26,5 +29,7 @@
         /// 签署平台，逗号分割，1-开放服务h5，2-支付宝签 ，默认值1
         /// </summary>
         public string SignPlatform { get; set; } = "1";
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionData { get; set; }
     }
 }
